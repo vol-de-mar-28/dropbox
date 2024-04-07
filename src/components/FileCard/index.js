@@ -19,7 +19,6 @@ import {
 } from '@chakra-ui/icons';
 import { downloadFile } from '../../redux/slices/dashboard';
 import img from '../../assets/images/img.png';
-import folder from '../../assets/images/folder.png';
 
 const style = {
   padding: '15px',
@@ -50,11 +49,7 @@ export default function FileCard({
         <DragHandleIcon sx={{ cursor: 'grab' }} />
       </Tooltip>
       <Flex flexDirection="column" alignItems="center">
-        <Image
-          src={file['.tag'] === 'folder' ? folder : img}
-          alt="Folder"
-          h="125px"
-        />
+        <Image src={img} alt="Folder" h="125px" />
         <Text>{file.name}</Text>
       </Flex>
       <Menu>
