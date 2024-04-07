@@ -125,7 +125,7 @@ export const uploadFile = async (path, file) => {
           Authorization: `Bearer ${localStorage.getItem('dropboxToken')}`,
           'Dropbox-API-Arg': JSON.stringify({ path: fixedPathname(path) }),
         },
-        data: file,
+        body: file,
       }
     );
     const res = await response.json();
