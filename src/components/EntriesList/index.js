@@ -22,7 +22,9 @@ export default function EntriesList({ entries, deleteEntity }) {
   const dropHandler = (e, entity) => {
     e.preventDefault();
     const newPath = entity.path_lower.concat('/') + entityFrom.name;
-    moveEntity(entityFrom.path_lower, newPath);
+    if (entity.path_lower !== entityFrom.path_lower) {
+      moveEntity(entityFrom.path_lower, newPath);
+    }
   };
 
   return (
